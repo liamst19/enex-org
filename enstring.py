@@ -296,11 +296,12 @@ def convert_note(note):
         if item is END_UNORDERED:
             lists.pop()
         if item is LIST_ITEM:
-            if lists[-1]: # are we in an ordered list?
-                item = '\n' + str(lists[-1]) + '. '
-                lists[-1] += 1
-            else:
-                item = '\n- '
+            item = '\n- '
+            # if lists[-1]: # are we in an ordered list?
+            #     item = '\n' + str(lists[-1]) + '. '
+            #     lists[-1] += 1
+            # else:
+            #     item = '\n- '
         
         if isinstance(item, str):
             if in_row:
